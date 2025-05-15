@@ -264,7 +264,7 @@
   </link>
   <joint
     name="left_shoulder_pitch_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0.255999999999995 -0.145800000000004"
       rpy="0 0 -3.14159265358978" />
@@ -322,7 +322,7 @@
   </link>
   <joint
     name="left_shoulder_roll_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="-0.0313 0 -0.0592"
       rpy="0 -1.5708 0" />
@@ -380,7 +380,7 @@
   </link>
   <joint
     name="left_shoulder_yaw_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0.1252 -0.0313000000000029"
       rpy="1.57079632679488 1.5707963267949 0" />
@@ -438,7 +438,7 @@
   </link>
   <joint
     name="left_elbow_pitch_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 -0.031 -0.0365000000000021"
       rpy="-1.5707963267949 0 0" />
@@ -496,7 +496,7 @@
   </link>
   <joint
     name="left_elbow_yaw_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0.116999999999998 0.0310000000000001"
       rpy="1.5707963267949  -1.5708 0" />
@@ -554,7 +554,7 @@
   </link>
   <joint
     name="left_wrist_pitch_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.006 9.9998E-05 -0.1394"
       rpy="1.5708 0 0" />
@@ -615,7 +615,7 @@
   </link>
   <joint
     name="right_shoulder_pitch_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 0.256 0.1458"
       rpy="3.1416 0 0" />
@@ -674,7 +674,7 @@
   </link>
   <joint
     name="right_shoulder_roll_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.0313 0 -0.0592"
       rpy="3.1416 -1.5708 0" />
@@ -733,7 +733,7 @@
   </link>
   <joint
     name="right_shoulder_yaw_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 -0.1252 -0.0313"
       rpy="1.5708 0 0" />
@@ -792,7 +792,7 @@
   </link>
   <joint
     name="right_elbow_pitch_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="-0.0309999999999999 0 0.0365000000000022"
       rpy="-1.5707963267949 0 -1.5707963267949" />
@@ -850,7 +850,7 @@
   </link>
   <joint
     name="right_elbow_yaw_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0 -0.116999999999998 0.0310000000000001"
       rpy="-1.5707963267949 -1.5708 0" />
@@ -908,7 +908,7 @@
   </link>
   <joint
     name="right_wrist_pitch_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.006 9.9998E-05 -0.1394"
       rpy="1.5708 0 0" />
@@ -1295,7 +1295,7 @@
   </link>
   <joint
     name="left_hip_pitch_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.00245 0.092277 -0.012143"
       rpy="0 -0.7854 1.5708" />
@@ -1353,7 +1353,7 @@
   </link>
   <joint
     name="left_hip_roll_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 -0.0405000000000076 -0.0589000000000007"
       rpy="1.57079632679491 0.785398163397451 0" />
@@ -1411,7 +1411,7 @@
   </link>
   <joint
     name="left_hip_yaw_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 -0.0838049159474928 -0.0406000000000136"
       rpy="1.5707963267949 0 0" />
@@ -1469,7 +1469,7 @@
   </link>
   <joint
     name="left_knee_pitch_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.0337000000000097 0 0.142200000000001"
       rpy="-1.57079632679488 0 -1.5707963267949" />
@@ -1527,7 +1527,7 @@
   </link>
   <joint
     name="left_ankle_pitch_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 -0.304939999999997 0.0336000000000411"
       rpy="-3.14159265358979 0 3.14159265358979" />
@@ -1585,7 +1585,7 @@
   </link>
   <joint
     name="left_ankle_roll_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 1.5707963267949 0" />
@@ -1972,7 +1972,7 @@
   </link>
   <joint
     name="right_hip_pitch_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0.00245 -0.092277 -0.012143"
       rpy="0 -0.7854 -1.5708" />
@@ -2030,7 +2030,7 @@
   </link>
   <joint
     name="right_hip_roll_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 0.0405000000001067 -0.0588999999999981"
       rpy="1.57079632679491 0.78539816339745 0" />
@@ -2088,7 +2088,7 @@
   </link>
   <joint
     name="right_hip_yaw_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 -0.0777549159474913 0.0405999999999983"
       rpy="-1.57079632680723 0 0.00861027512635925" />
@@ -2146,7 +2146,7 @@
   </link>
   <joint
     name="right_knee_pitch_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="-0.0347752157308957 0 -0.147956063988164"
       rpy="1.57940660192126 0 1.57079632822694" />
@@ -2204,7 +2204,7 @@
   </link>
   <joint
     name="right_ankle_pitch_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 -0.304939999999999 0.0335999999999944"
       rpy="3.14159265358979 0 0" />
@@ -2262,7 +2262,7 @@
   </link>
   <joint
     name="right_ankle_roll_joint"
-    type="revolute">
+    type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 1.5707963267949 0" />
