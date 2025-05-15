@@ -4,10 +4,7 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="x1">
-  <mujoco>
-        <compiler meshdir="../meshes/" balanceinertia="true" discardvisual="false" fusestatic="false"/>
-  </mujoco>
-  
+
   <link
     name="base_link">
     <inertial>
@@ -30,7 +27,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/base_link_simple.STL" />
+          filename="package://x1_moveit_urdf/meshes/base_link_simple.STL" />
       </geometry>
       <material
         name="base_link_material">
@@ -44,7 +41,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/base_link_simple.STL" />
+          filename="package://x1_moveit_urdf/meshes/base_link_simple.STL" />
       </geometry>
     </collision>
   </link>
@@ -70,7 +67,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lumber_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/lumber_yaw.STL" />
       </geometry>
       <material
         name="lumber_yaw_material">
@@ -84,7 +81,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lumber_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/lumber_yaw.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -128,7 +125,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lumber_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/lumber_roll.STL" />
       </geometry>
       <material
         name="lumber_roll_material">
@@ -142,7 +139,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lumber_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/lumber_roll.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -186,7 +183,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lumber_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/lumber_pitch.STL" />
       </geometry>
       <material
         name="lumber_pitch_material">
@@ -200,7 +197,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/lumber_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/lumber_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -244,7 +241,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_shoulder_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_shoulder_pitch.STL" />
       </geometry>
       <material
         name="left_shoulder_pitch_material">
@@ -258,7 +255,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_shoulder_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_shoulder_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -302,7 +299,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_shoulder_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_shoulder_roll.STL" />
       </geometry>
       <material
         name="left_shoulder_roll_material">
@@ -316,7 +313,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_shoulder_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_shoulder_roll.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -360,7 +357,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_shoulder_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_shoulder_yaw.STL" />
       </geometry>
       <material
         name="left_shoulder_yaw_material">
@@ -374,7 +371,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_shoulder_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_shoulder_yaw.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -418,7 +415,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_elbow_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_elbow_pitch.STL" />
       </geometry>
       <material
         name="left_elbow_pitch_material">
@@ -432,7 +429,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_elbow_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_elbow_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -476,7 +473,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_elbow_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_elbow_yaw.STL" />
       </geometry>
       <material
         name="left_elbow_yaw_material">
@@ -490,7 +487,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_elbow_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_elbow_yaw.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -534,7 +531,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_wrist_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_wrist_pitch.STL" />
       </geometry>
       <material
         name="left_wrist_pitch_material">
@@ -548,7 +545,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_wrist_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_wrist_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -595,7 +592,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_shoulder_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_shoulder_pitch.STL" />
       </geometry>
       <material
         name="right_shoulder_pitch_material">
@@ -609,7 +606,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_shoulder_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_shoulder_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -654,7 +651,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_shoulder_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_shoulder_roll.STL" />
       </geometry>
       <material
         name="right_shoulder_roll_material">
@@ -668,7 +665,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_shoulder_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_shoulder_roll.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -713,7 +710,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_shoulder_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_shoulder_yaw.STL" />
       </geometry>
       <material
         name="right_shoulder_yaw_material">
@@ -727,7 +724,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_shoulder_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_shoulder_yaw.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -772,7 +769,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_elbow_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_elbow_pitch.STL" />
       </geometry>
       <material
         name="right_elbow_pitch_material">
@@ -786,7 +783,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_elbow_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_elbow_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -830,7 +827,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_elbow_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_elbow_yaw.STL" />
       </geometry>
       <material
         name="right_elbow_yaw_material">
@@ -844,7 +841,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_elbow_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_elbow_yaw.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -888,7 +885,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_wrist_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_wrist_pitch.STL" />
       </geometry>
       <material
         name="right_wrist_pitch_material">
@@ -902,7 +899,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_wrist_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_wrist_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -947,7 +944,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_a_link.STL" />
       </geometry>
       <material
         name="">
@@ -961,7 +958,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_a_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1005,7 +1002,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_a_ball.STL" />
       </geometry>
       <material
         name="">
@@ -1019,7 +1016,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_a_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1058,7 +1055,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_a_loop.STL" />
       </geometry>
       <material
         name="">
@@ -1072,7 +1069,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_a_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1111,7 +1108,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_b_link.STL" />
       </geometry>
       <material
         name="">
@@ -1125,7 +1122,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_b_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1169,7 +1166,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_b_ball.STL" />
       </geometry>
       <material
         name="">
@@ -1183,7 +1180,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_b_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1222,7 +1219,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_b_loop.STL" />
       </geometry>
       <material
         name="">
@@ -1236,7 +1233,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/waist_motor_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/waist_motor_b_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1275,7 +1272,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_hip_pitch.STL" />
       </geometry>
       <material
         name="left_hip_pitch_material">
@@ -1289,7 +1286,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_hip_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1333,7 +1330,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_hip_roll.STL" />
       </geometry>
       <material
         name="left_hip_roll_material">
@@ -1347,7 +1344,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_hip_roll.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1391,7 +1388,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_hip_yaw.STL" />
       </geometry>
       <material
         name="left_hip_yaw_material">
@@ -1405,7 +1402,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_hip_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_hip_yaw.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1449,7 +1446,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_knee_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_knee_pitch.STL" />
       </geometry>
       <material
         name="left_knee_pitch_material">
@@ -1463,7 +1460,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_knee_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_knee_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1507,7 +1504,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_ankle_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_ankle_pitch.STL" />
       </geometry>
       <material
         name="left_ankle_pitch_material">
@@ -1521,7 +1518,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_ankle_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_ankle_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1565,7 +1562,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_ankle_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_ankle_roll.STL" />
       </geometry>
       <material
         name="left_ankle_roll_material">
@@ -1579,7 +1576,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/left_ankle_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/left_ankle_roll.STL" />
       </geometry>
     </collision>
   </link>
@@ -1623,7 +1620,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_a_link.STL" />
       </geometry>
       <material
         name="">
@@ -1637,7 +1634,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_a_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1681,7 +1678,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_a_ball.STL" />
       </geometry>
       <material
         name="">
@@ -1695,7 +1692,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_a_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1734,7 +1731,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_a_loop.STL" />
       </geometry>
       <material
         name="">
@@ -1748,7 +1745,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_a_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1787,7 +1784,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_b_link.STL" />
       </geometry>
       <material
         name="">
@@ -1801,7 +1798,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_b_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1845,7 +1842,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_b_ball.STL" />
       </geometry>
       <material
         name="">
@@ -1859,7 +1856,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_b_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1898,7 +1895,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_b_loop.STL" />
       </geometry>
       <material
         name="">
@@ -1912,7 +1909,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_l_toe_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_l_toe_b_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -1952,7 +1949,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_hip_pitch.STL" />
       </geometry>
       <material
         name="right_hip_pitch_material">
@@ -1966,7 +1963,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_hip_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2010,7 +2007,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_hip_roll.STL" />
       </geometry>
       <material
         name="right_hip_roll_material">
@@ -2024,7 +2021,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_hip_roll.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2068,7 +2065,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_hip_yaw.STL" />
       </geometry>
       <material
         name="right_hip_yaw_material">
@@ -2082,7 +2079,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_hip_yaw.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_hip_yaw.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2126,7 +2123,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_knee_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_knee_pitch.STL" />
       </geometry>
       <material
         name="right_knee_pitch_material">
@@ -2140,7 +2137,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_knee_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_knee_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2184,7 +2181,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_ankle_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_ankle_pitch.STL" />
       </geometry>
       <material
         name="right_ankle_pitch_material">
@@ -2198,7 +2195,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_ankle_pitch.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_ankle_pitch.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2242,7 +2239,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_ankle_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_ankle_roll.STL" />
       </geometry>
       <material
         name="right_ankle_roll_material">
@@ -2256,7 +2253,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/right_ankle_roll.STL" />
+          filename="package://x1_moveit_urdf/meshes/right_ankle_roll.STL" />
       </geometry>
     </collision>
   </link>
@@ -2300,7 +2297,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_a_link.STL" />
       </geometry>
       <material
         name="">
@@ -2314,7 +2311,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_a_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2358,7 +2355,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_a_ball.STL" />
       </geometry>
       <material
         name="">
@@ -2372,7 +2369,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_a_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2411,7 +2408,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_a_loop.STL" />
       </geometry>
       <material
         name="">
@@ -2425,7 +2422,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_a_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2464,7 +2461,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_b_link.STL" />
       </geometry>
       <material
         name="">
@@ -2478,7 +2475,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_b_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2522,7 +2519,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_b_ball.STL" />
       </geometry>
       <material
         name="">
@@ -2536,7 +2533,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_b_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2575,7 +2572,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_b_loop.STL" />
       </geometry>
       <material
         name="">
@@ -2589,7 +2586,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/leg_r_toe_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/leg_r_toe_b_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2628,7 +2625,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_ball.STL" />
       </geometry>
       <material
         name="">
@@ -2642,7 +2639,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2681,7 +2678,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_a_link.STL" />
       </geometry>
       <material
         name="">
@@ -2695,7 +2692,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_a_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2739,7 +2736,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_loop.STL" />
       </geometry>
       <material
         name="">
@@ -2753,7 +2750,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2792,7 +2789,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_ball.STL" />
       </geometry>
       <material
         name="">
@@ -2806,7 +2803,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2845,7 +2842,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_b_link.STL" />
       </geometry>
       <material
         name="">
@@ -2859,7 +2856,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_b_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2903,7 +2900,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_loop.STL" />
       </geometry>
       <material
         name="">
@@ -2917,7 +2914,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -2956,7 +2953,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_ball.STL" />
       </geometry>
       <material
         name="">
@@ -2970,7 +2967,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -3009,7 +3006,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_a_link.STL" />
       </geometry>
       <material
         name="">
@@ -3023,7 +3020,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_a_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_a_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -3067,7 +3064,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_loop.STL" />
       </geometry>
       <material
         name="">
@@ -3081,7 +3078,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_a_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_a_loop.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -3120,7 +3117,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_ball.STL" />
       </geometry>
       <material
         name="">
@@ -3134,7 +3131,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_ball.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_ball.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -3173,7 +3170,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_b_link.STL" />
       </geometry>
       <material
         name="">
@@ -3187,7 +3184,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_motor_b_link.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_motor_b_link.STL" />
       </geometry>
     </collision> -->
   </link>
@@ -3231,7 +3228,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_loop.STL" />
       </geometry>
       <material
         name="">
@@ -3245,7 +3242,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../meshes/arm_r_wrist_b_loop.STL" />
+          filename="package://x1_moveit_urdf/meshes/arm_r_wrist_b_loop.STL" />
       </geometry>
     </collision> -->
   </link>
