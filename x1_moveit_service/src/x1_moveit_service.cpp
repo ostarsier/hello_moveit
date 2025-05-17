@@ -18,7 +18,7 @@ int main(int argc, char * argv[])
 
   // Create the MoveIt MoveGroup Interface
   using moveit::planning_interface::MoveGroupInterface;
-  auto move_group_interface = MoveGroupInterface(node, "left_arm");
+  auto move_group_interface = MoveGroupInterface(node, "manipulator");
 
   // Set a target Pose
   auto const target_pose = []{
@@ -40,7 +40,7 @@ int main(int argc, char * argv[])
 
   // Execute the plan
   if(success) {
-    move_group_interface.execute(plan);
+    RCLCPP_ERROR(logger, "Planning success!");
   } else {
     RCLCPP_ERROR(logger, "Planning failed!");
   }

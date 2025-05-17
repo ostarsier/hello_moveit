@@ -8,6 +8,13 @@ https://moveit.picknik.ai/main/doc/examples/move_group_interface/move_group_inte
 
 # create ros  package
 ros2 pkg create --build-type ament_cmake x1_moveit_urdf  
+CMakeLists.txt 添加
+# 安装URDF和meshes文件到share目录
+install(DIRECTORY urdf meshes
+  DESTINATION share/${PROJECT_NAME}
+)
+
+
 ros2 pkg create --build-type ament_cmake x1_moveit_service 
 
 # setup
