@@ -13,18 +13,16 @@ int main(int argc, char * argv[])
   // Initialize ROS and create the Node
   rclcpp::init(argc, argv);
   auto const node = std::make_shared<rclcpp::Node>(
-    "hello_moveit",
+    "x1_moveit_service",
     rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(true)
   );
 
   // Create a ROS logger
-  auto const logger = rclcpp::get_logger("hello_moveit");
-
-  // Next step goes here
+  auto const logger = rclcpp::get_logger("x1_moveit_service");
 
   // Create the MoveIt MoveGroup Interface
-using moveit::planning_interface::MoveGroupInterface;
-auto move_group_interface = MoveGroupInterface(node, "manipulator");
+  using moveit::planning_interface::MoveGroupInterface;
+  auto move_group_interface = MoveGroupInterface(node, "manipulator");
 
   // 加载机器人模型
   robot_model_loader::RobotModelLoader robot_model_loader(node);
@@ -44,12 +42,12 @@ auto move_group_interface = MoveGroupInterface(node, "manipulator");
   };
 
   std::vector<double> joint_positions = {
-    -1.2821518981237512,
-    -0.30178358817004824,
-    -0.8818087621270065,
-    -1.8109124586879077,
-    -0.9185249570386322,
-    -0.6720178668596604
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
   };
 
   robot_state->setJointGroupPositions("manipulator", joint_positions);
