@@ -1,10 +1,4 @@
 
-x1_moveit_resources: x1 urdf
-x1_movegroup:x1 moveit config
-
-
-
-https://moveit.picknik.ai/main/doc/examples/move_group_interface/move_group_interface_tutorial.html
 
 # create ros  package
 ros2 pkg create --build-type ament_cmake x1_moveit_urdf  
@@ -14,8 +8,6 @@ install(DIRECTORY urdf meshes
   DESTINATION share/${PROJECT_NAME}
 )
 
-
-ros2 pkg create --build-type ament_cmake x1_moveit_service 
 
 # setup
 ros2 launch moveit_setup_assistant setup_assistant.launch.py
@@ -36,11 +28,26 @@ source ~/ws_moveit_my/install/setup.bash
 # 运行moveit
 ros2 launch moveit2_tutorials demo.launch.py
 
+ros2 launch fanuc_moveit_config demo.launch.py
+ros2 launch x1_moveit_config demo.launch.py
+
 ros2 launch x1_moveit_config demo.launch.py
 
 ros2 run x1_moveit_service x1_moveit_service
 
 
+# ros2命令
+ros2 topic echo /joint_states
+ros2 topic echo /tf
+
+
+ros2 pkg create --build-type ament_cmake x1_moveit_service 
+
+
+ros2 pkg create \
+ --build-type ament_cmake \
+ --dependencies moveit_ros_planning_interface rclcpp \
+ --node-name x1_moveit_service x1_moveit_service
 
 
 
