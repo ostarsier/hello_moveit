@@ -1,19 +1,20 @@
-# MoveIt uses this configuration for controller management
+# MoveIt 控制器管理配置文件
 
+# 指定MoveIt使用的控制器管理插件，这里为simple_controller_manager
 moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
 moveit_simple_controller_manager:
   controller_names:
-    - x1_controller
+    - x1_controller   # 控制器名称列表
 
   x1_controller:
-    type: FollowJointTrajectory
+    type: FollowJointTrajectory   # 控制器类型，轨迹跟随
     joints:
-      - right_shoulder_pitch_joint
-      - right_shoulder_roll_joint
-      - right_shoulder_yaw_joint
-      - right_elbow_pitch_joint
-      - right_elbow_yaw_joint
-      - right_wrist_pitch_joint
-    action_ns: follow_joint_trajectory
-    default: true
+      - right_shoulder_pitch_joint  # 右肩俯仰关节
+      - right_shoulder_roll_joint   # 右肩滚转关节
+      - right_shoulder_yaw_joint    # 右肩偏航关节
+      - right_elbow_pitch_joint     # 右肘俯仰关节
+      - right_elbow_yaw_joint       # 右肘偏航关节
+      - right_wrist_pitch_joint     # 右腕俯仰关节
+    action_ns: follow_joint_trajectory  # 轨迹跟随action命名空间
+    default: true  # 是否为默认控制器

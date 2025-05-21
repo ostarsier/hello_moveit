@@ -83,6 +83,8 @@ auto const [success, plan] = [&move_group_interface]{
 
 // Execute the plan
 if(success) {
+  // plan 不是单一关节的一个值，而是包含了多个关节在一段时间内的完整轨迹。
+  // 内部包含了trajectory, 里有一个 points 数组，每个 point 记录了所有相关关节在某一时刻的角度（位置）、速度、加速度等信息
   move_group_interface.execute(plan);
 } else {
   RCLCPP_ERROR(logger, "Planning failed!");

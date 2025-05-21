@@ -1,18 +1,18 @@
-# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+# joint_limits.yaml 用于覆盖或补充URDF中指定的动力学属性
 
-# For beginners, we downscale velocity and acceleration limits.
-# You can always specify higher scaling factors (<= 1.0) in your motion requests.  # Increase the values below to 1.0 to always move at maximum speed.
-default_velocity_scaling_factor: 0.1
-default_acceleration_scaling_factor: 0.1
+# 对于初学者，建议降低速度和加速度的缩放因子
+# 你可以在运动请求中指定更高的缩放因子（<=1.0）。将下面的值改为1.0可始终以最大速度运动。
+default_velocity_scaling_factor: 0.1  # 默认速度缩放因子（0~1），影响所有关节的最大速度
+default_acceleration_scaling_factor: 0.1  # 默认加速度缩放因子（0~1），影响所有关节的最大加速度
 
-# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
-# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+# 可以用[max_position, min_position, max_velocity, max_acceleration]覆盖具体关节属性
+# 通过[has_velocity_limits, has_acceleration_limits]可以关闭关节速度/加速度限制
 joint_limits:
   right_elbow_pitch_joint:
-    has_velocity_limits: false
-    max_velocity: 0
-    has_acceleration_limits: false
-    max_acceleration: 0
+    has_velocity_limits: false        # 是否启用速度限制
+    max_velocity: 0                  # 最大速度（未启用时无效）
+    has_acceleration_limits: false   # 是否启用加速度限制
+    max_acceleration: 0              # 最大加速度（未启用时无效）
   right_elbow_yaw_joint:
     has_velocity_limits: false
     max_velocity: 0
