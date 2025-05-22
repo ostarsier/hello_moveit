@@ -8,6 +8,8 @@
 #include <sensor_msgs/msg/joint_state.hpp>
 #include <moveit/robot_model_loader/robot_model_loader.h>
 
+// 规划并执行到: 右手关节状态全部设置为0时的position
+
 int main(int argc, char * argv[])
 {
   // Initialize ROS and create the Node
@@ -68,9 +70,12 @@ int main(int argc, char * argv[])
 
   RCLCPP_INFO(logger, "目标位置: x=%.3f, y=%.3f, z=%.3f", 
              target_pose.position.x, target_pose.position.y, target_pose.position.z);
-  RCLCPP_INFO(logger, "目标姿态: x=%.3f, y=%.3f, z=%.3f, w=%.3f", 
-             target_pose.orientation.x, target_pose.orientation.y, 
-             target_pose.orientation.z, target_pose.orientation.w);
+  Eigen::Vector3d rpy = end_effector_state.rotation().eulerAngles(0, 1, 2); // 0: roll, 1: pitch, 2: yaw
+  RCLCPP_INFO(logger, "目标姿态(欧拉角): roll=%.3f, pitch=%.3f, yaw=%.3f", rpy[0], rpy[1], rpy[2]);
+
+  RCLCPP_INFO(logger, "目标姿态(四元数): x=%.3f, y=%.3f, z=%.3f, w=%.3f", 
+    target_pose.orientation.x, target_pose.orientation.y, 
+    target_pose.orientation.z, target_pose.orientation.w);
 
   move_group_interface.setPoseTarget(target_pose);
 

@@ -5,31 +5,6 @@
 <robot
   name="x1">
 
-  <!-- 添加虚拟根链接，解决KDL不支持带惯性的根链接问题 -->
-  <link name="dummy_base">
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="transparent">
-        <color rgba="0 0 0 0"/>
-      </material>
-    </visual>
-  </link>
-
-  <joint name="dummy_to_base" type="fixed">
-    <parent link="dummy_base"/>
-    <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
-
   <link
     name="base_link">
     <inertial>
