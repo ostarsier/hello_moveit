@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(x1_moveit_proto REQUIRED)
 
 add_executable(x1_moveit_service src/x1_moveit_service.cpp)
 target_include_directories(x1_moveit_service PUBLIC
@@ -21,7 +22,32 @@ ament_target_dependencies(
   "rclcpp"
 )
 
-install(TARGETS x1_moveit_service
+# 添加x1_moveit_rviz可执行文件
+add_executable(x1_moveit_rviz src/x1_moveit_rviz.cpp)
+target_include_directories(x1_moveit_rviz PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(x1_moveit_rviz PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+ament_target_dependencies(
+  x1_moveit_rviz
+  "moveit_ros_planning_interface"
+  "rclcpp"
+  "x1_moveit_proto"
+)
+
+# 添加x1_moveit_ik可执行文件
+add_executable(x1_moveit_ik src/x1_moveit_ik.cpp)
+target_include_directories(x1_moveit_ik PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(x1_moveit_ik PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+ament_target_dependencies(
+  x1_moveit_ik
+  "moveit_ros_planning_interface"
+  "rclcpp"
+)
+
+install(TARGETS x1_moveit_service x1_moveit_rviz x1_moveit_ik
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

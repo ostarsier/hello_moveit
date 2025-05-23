@@ -44,12 +44,12 @@ int main(int argc, char * argv[])
   };
 
   std::vector<double> joint_positions = {
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+     1.407659379984697,
+     -2.20502064988792e-05,
+     7.674062572431711e-05,
+     2.0907559106733458,
+     -2.4927829739344802e-05,
+     0.6830936329077301
   };
 
   robot_state->setJointGroupPositions("manipulator", joint_positions);
@@ -76,6 +76,13 @@ int main(int argc, char * argv[])
   RCLCPP_INFO(logger, "目标姿态(四元数): x=%.3f, y=%.3f, z=%.3f, w=%.3f", 
     target_pose.orientation.x, target_pose.orientation.y, 
     target_pose.orientation.z, target_pose.orientation.w);
+
+  // 设置速度优化参数
+  move_group_interface.setMaxVelocityScalingFactor(1.0);  // 最大速度
+  move_group_interface.setMaxAccelerationScalingFactor(1.0);  // 最大加速度
+  move_group_interface.setPlanningTime(0.5);  // 减少规划时间
+  move_group_interface.setPlannerId("RRTConnect");  // 使用更快的规划器
+  move_group_interface.setNumPlanningAttempts(1);  // 减少规划尝试次数
 
   move_group_interface.setPoseTarget(target_pose);
 

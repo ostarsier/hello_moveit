@@ -22,11 +22,14 @@ ros2 launch moveit_setup_assistant setup_assistant.launch.py
 source /opt/ros/humble/setup.bash
 source ~/ws_moveit/install/setup.bash
 source ~/ws_moveit_my/install/setup.bash
+conda activate ros2
 
 # 编译
 colcon build 
 
 # 运行moveit
+ros2 launch moveit2_tutorials demo.launch.py
+
 ros2 launch x1_moveit_config demo.launch.py
 
 ros2 run x1_moveit_service x1_moveit_service
@@ -37,6 +40,7 @@ ros2 topic echo /joint_states
 
 
 # 手默认的状态，关节都是0时的position
+xyz: 蓝红绿
 "right_shoulder_pitch_joint",
 "right_shoulder_yaw_joint",
 "right_shoulder_roll_joint",
@@ -44,12 +48,20 @@ ros2 topic echo /joint_states
 "right_elbow_yaw_joint",
 "right_wrist_pitch_joint"
 
-目标位置: x=0.002, y=-0.199, z=-0.006
-目标姿态: x=0.500, y=0.500, z=0.500, w=0.500
+const double initial_x = 0.002;
+const double initial_y = -0.199;
+const double initial_z = -0.006;
+const double initial_roll = 1.883;
+const double initial_pitch = 1.571;
+const double initial_yaw = -0.312;
 
 # ros2 用的pip
 /usr/bin/python3.10 -m pip install -e .
 
 # joycon
+- 运行rviz
+ros2 launch x1_moveit_config demo.launch.py
+- 发布手柄pose
 ros2 run joycon pose_pub
-ros2 topic echo /joycon_pose
+- 运行逆运动学服务
+ros2 run x1_moveit_service x1_moveit_rviz

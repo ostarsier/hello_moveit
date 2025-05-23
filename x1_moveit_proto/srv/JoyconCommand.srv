@@ -1,0 +1,8 @@
+# 请求 (Request)
+float64[6] pose            # 机器人末端执行器的姿态（例如：x, y, z, roll, pitch, yaw 或 x, y, z, qx, qy, qz, qw）
+float64 gripper          # 夹爪的开合程度（例如：0.0 代表关闭，1.0 代表完全打开）
+int32 control_button     # 控制按钮的整数值（例如：0: 无操作, 1: 启动, 2: 停止）
+---
+# 响应 (Response)
+bool success             # 服务调用是否成功
+string message           # 成功的消息或失败的原因

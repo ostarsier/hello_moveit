@@ -4,7 +4,6 @@
 planning_plugin: ompl_interface/OMPLPlanner   # 指定OMPL作为规划插件
 
 request_adapters: >-
-  # 规划请求适配器，依次执行以下操作以优化和修正路径
   default_planner_request_adapters/AddTimeOptimalParameterization
   default_planner_request_adapters/ResolveConstraintFrames
   default_planner_request_adapters/FixWorkspaceBounds
