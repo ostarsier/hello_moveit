@@ -15,6 +15,7 @@
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <x1_moveit_proto/srv/joycon_command.hpp>
+// 规划到指定
 
 // 辅助函数 - 四元数转欧拉角
 Eigen::Vector3d quaternionToRPY(const Eigen::Quaterniond & quat)
@@ -34,7 +35,7 @@ Eigen::Quaterniond rpyToQuaternion(const Eigen::Vector3d & rpy)
   return Eigen::Quaterniond(quat.w(), quat.x(), quat.y(), quat.z());
 }
 
-// 辅助函数 - 将Joycon的pose数据转换为geometry_msgs::msg::Pose
+// 辅助函数 - 将Joycon的pose数据转换为geometry_msgs::msg::Pose，只使用xyz位置信息
 geometry_msgs::msg::Pose joyconPoseToPose(const std::array<double, 6> & pose_data)
 {
   geometry_msgs::msg::Pose pose;
@@ -44,14 +45,12 @@ geometry_msgs::msg::Pose joyconPoseToPose(const std::array<double, 6> & pose_dat
   pose.position.y = pose_data[1];
   pose.position.z = pose_data[2];
   
-  // 设置姿态 (使用欧拉角 roll, pitch, yaw 转换为四元数)
-  Eigen::Vector3d rpy(pose_data[3], pose_data[4], pose_data[5]);
-  Eigen::Quaterniond quat = rpyToQuaternion(rpy);
-  
-  pose.orientation.x = quat.x();
-  pose.orientation.y = quat.y();
-  pose.orientation.z = quat.z();
-  pose.orientation.w = quat.w();
+  // 不设置姿态，将在handleJoyconCommand函数中使用当前姿态
+  // 这里设置一个默认值，后续会被覆盖
+  pose.orientation.w = 1.0;
+  pose.orientation.x = 0.0;
+  pose.orientation.y = 0.0;
+  pose.orientation.z = 0.0;
   
   return pose;
 }
@@ -76,18 +75,19 @@ void handleJoyconCommand(
     pose_data[i] = request->pose[i];
   }
   
-  // 转换为geometry_msgs::msg::Pose
+  // 获取当前末端执行器的姿态
+  geometry_msgs::msg::PoseStamped current_pose = move_group_interface->getCurrentPose();
+  
+  // 转换为geometry_msgs::msg::Pose，只使用xyz位置信息
   geometry_msgs::msg::Pose target_pose = joyconPoseToPose(pose_data);
   
-  // // 初始位姿（关节都为0时的末端坐标）
-  // const double initial_x = 0.002;
-  // const double initial_y = -0.199;
-  // const double initial_z = -0.006;
+  // 使用当前姿态
+  target_pose.orientation = current_pose.pose.orientation;
   
-  // // 将接收到的目标位姿加上初始坐标
-  // target_pose.position.x += initial_x;
-  // target_pose.position.y += initial_y;
-  // target_pose.position.z += initial_z;
+  RCLCPP_INFO(logger, "当前姿态: x=%.3f, y=%.3f, z=%.3f, qw=%.3f, qx=%.3f, qy=%.3f, qz=%.3f", 
+              current_pose.pose.position.x, current_pose.pose.position.y, current_pose.pose.position.z,
+              current_pose.pose.orientation.w, current_pose.pose.orientation.x, 
+              current_pose.pose.orientation.y, current_pose.pose.orientation.z);
   
   RCLCPP_INFO(logger, "目标位置: x=%.3f, y=%.3f, z=%.3f", 
               target_pose.position.x, target_pose.position.y, target_pose.position.z);

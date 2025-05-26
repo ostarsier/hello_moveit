@@ -47,7 +47,20 @@ ament_target_dependencies(
   "rclcpp"
 )
 
-install(TARGETS x1_moveit_service x1_moveit_rviz x1_moveit_ik
+# 添加x1_moveit_ik_service可执行文件
+add_executable(x1_moveit_ik_service src/x1_moveit_ik_service.cpp)
+target_include_directories(x1_moveit_ik_service PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(x1_moveit_ik_service PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+ament_target_dependencies(
+  x1_moveit_ik_service
+  "moveit_ros_planning_interface"
+  "rclcpp"
+  "x1_moveit_proto"
+)
+
+install(TARGETS x1_moveit_service x1_moveit_rviz x1_moveit_ik x1_moveit_ik_service
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

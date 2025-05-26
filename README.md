@@ -18,6 +18,8 @@ install(DIRECTORY urdf meshes
 # setup
 ros2 launch moveit_setup_assistant setup_assistant.launch.py
 
+
+
 # source环境
 source /opt/ros/humble/setup.bash
 source ~/ws_moveit/install/setup.bash
@@ -56,12 +58,24 @@ const double initial_pitch = 1.571;
 const double initial_yaw = -0.312;
 
 # ros2 用的pip
-/usr/bin/python3.10 -m pip install -e .
+/usr/bin/python3.10 -m pip install redis
 
 # joycon
+- x1_moveit_config demo.launch.py
 - 运行rviz
 ros2 launch x1_moveit_config demo.launch.py
 - 发布手柄pose
 ros2 run joycon pose_pub
 - 运行逆运动学服务
-ros2 run x1_moveit_service x1_moveit_rviz
+ros2 run x1_moveit_service x1_moveit_ik
+
+ros2 service call /ik_solve x1_moveit_proto/srv/IkSolve "{x: 0.002, y: -0.199, z: -0.006}"
+
+# 其他
+1.逆运动学多个解
+多次尝试求解IK
+设置了10次尝试，每次使用略微不同的随机种子状态
+收集所有成功的IK解到解集合中
+选择最佳解
+计算每个解与初始状态的欧几里德距离
+选择距离最小的解作为最佳解（即关节变化最小的解）

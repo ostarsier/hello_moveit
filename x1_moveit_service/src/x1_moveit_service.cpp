@@ -44,12 +44,12 @@ int main(int argc, char * argv[])
   };
 
   std::vector<double> joint_positions = {
-     1.407659379984697,
-     -2.20502064988792e-05,
-     7.674062572431711e-05,
-     2.0907559106733458,
-     -2.4927829739344802e-05,
-     0.6830936329077301
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
   };
 
   robot_state->setJointGroupPositions("manipulator", joint_positions);

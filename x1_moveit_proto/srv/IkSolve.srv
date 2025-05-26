@@ -1,0 +1,10 @@
+# 请求部分 - 目标位置坐标
+float64 x
+float64 y
+float64 z
+---
+# 响应部分 - 关节角度
+float64[] joint_values
+string[] joint_names
+bool success
+string message
