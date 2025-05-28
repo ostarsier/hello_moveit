@@ -153,13 +153,43 @@ public:
     
     // 注册移动请求处理程序，同时支持GET和POST方法
     svr.Get("/move", handle_move);
-    svr.Post("/move", handle_move);
 
     RCLCPP_INFO(logger_, "HTTP服务器启动，监听端口: %d", port);
     
-    // 在非阻塞模式下启动服务器，这样不会阻塞ROS线程
-    if (!svr.listen("0.0.0.0", port)) {
-      RCLCPP_ERROR(logger_, "HTTP服务器启动失败！");
+    // 设置一些服务器参数以提高响应能力
+    svr.set_keep_alive_max_count(20); // 设置keep-alive连接的最大数量
+    svr.set_read_timeout(5); // 读取超时，秒
+    svr.set_write_timeout(5); // 写入超时，秒
+    
+    // 在启动前设置调试信息
+    RCLCPP_INFO(logger_, "使用的HTTP库版本: %s", CPPHTTPLIB_VERSION);
+    RCLCPP_INFO(logger_, "注册的端点: /health, /status, /move");
+    
+    // 测试端点，确保日志记录运行正常
+    svr.Get("/test", [this](const httplib::Request&, httplib::Response& res) {
+      RCLCPP_INFO(logger_, "接收到测试请求");
+      res.set_content("Test OK", "text/plain");
+    });
+    
+    // 使用新线程启动服务器
+    // 注意这里我们复制了server_ptr_而不是引用，这样可以避免生命周期问题
+    auto server = server_ptr_;
+    server_thread_ = std::thread([server, port, logger = logger_]() {
+      RCLCPP_INFO(logger, "HTTP服务器线程开始运行");
+      if (!server->listen("0.0.0.0", port)) {
+        RCLCPP_ERROR(logger, "HTTP服务器启动失败！");
+      }
+    });
+    
+    // 给服务器一点时间启动
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+  }
+
+  // 清理资源
+  ~MoveItRvizHttpServer() {
+    // 确保线程关闭
+    if (server_thread_.joinable()) {
+      server_thread_.join();
     }
   }
 
@@ -168,6 +198,7 @@ private:
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> move_group_interface_;
   std::shared_ptr<httplib::Server> server_ptr_;
   rclcpp::Logger logger_;
+  std::thread server_thread_; // HTTP服务器线程
 };
 
 // 注意：我们现在从include目录包含了完整的httplib.h
