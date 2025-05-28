@@ -76,3 +76,6 @@ ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=0.002 -p y:=-0.199 -p
 
 
 
+ros2 run x1_moveit_service x1_moveit_rviz_http_service
+curl http://localhost:8080/status
+curl -X POST "http://localhost:8080/move?x=0.002&y=-0.199&z=-0.006&qx=0.5&qy=0.5&qz=0.5&qw=0.5"
