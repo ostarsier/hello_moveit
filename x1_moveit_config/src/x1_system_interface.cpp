@@ -207,10 +207,13 @@ hardware_interface::return_type X1SystemInterface::write(
       }
       json_stream << hw_commands_[i];
       
-      // 记录每个关节的命令值
+      // todo 添加了urdf wrist后，去掉这行
       RCLCPP_DEBUG(rclcpp::get_logger("X1SystemInterface"), 
                   "Joint %zu command: %f", i, hw_commands_[i]);
     }
+    
+    // 在数组末尾添加一个值为0的关节
+    json_stream << ",0";
     
     json_stream << "]";
     std::string json_array = json_stream.str();
