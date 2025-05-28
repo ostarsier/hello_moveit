@@ -18,6 +18,14 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- 硬件接口所需依赖 -->
+  <depend>hardware_interface</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <!-- hiredis客户端库依赖 -->
+  <depend>libhiredis-dev</depend>
+
   <exec_depend>moveit_ros_move_group</exec_depend>
   <exec_depend>moveit_kinematics</exec_depend>
   <exec_depend>moveit_planners</exec_depend>

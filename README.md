@@ -53,6 +53,7 @@ xyz: 蓝红绿
 const double initial_x = 0.002;
 const double initial_y = -0.199;
 const double initial_z = -0.006;
+
 const double initial_roll = 1.883;
 const double initial_pitch = 1.571;
 const double initial_yaw = -0.312;
@@ -71,11 +72,7 @@ ros2 run x1_moveit_service x1_moveit_ik
 
 ros2 service call /ik_solve x1_moveit_proto/srv/IkSolve "{x: 0.002, y: -0.199, z: -0.006}"
 
-# 其他
-1.逆运动学多个解
-多次尝试求解IK
-设置了10次尝试，每次使用略微不同的随机种子状态
-收集所有成功的IK解到解集合中
-选择最佳解
-计算每个解与初始状态的欧几里德距离
-选择距离最小的解作为最佳解（即关节变化最小的解）
+ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=0.002 -p y:=-0.199 -p z:=-0.006
+
+
+

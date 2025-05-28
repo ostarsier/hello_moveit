@@ -5,10 +5,14 @@ controller_manager:
 
     x1_controller:
       type: joint_trajectory_controller/JointTrajectoryController  # 关节轨迹控制器
+      # 如果是在仿真环境中：这个 JointTrajectoryController 是一个软件控制器，它会接收轨迹，并根据时间步长模拟关节的运动，并定时发布模拟的关节状态。
+      # 如果是在真实机器人上：这个 JointTrajectoryController 会将轨迹指令转化为底层硬件驱动可以理解的命令，并通过你实现的 ros2_control 硬件接口发送给机器人硬件。
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster  # 关节状态广播器
+      # JointStateBroadcaster（也是 ros2_control 中的一个控制器）会从硬件接口获取这些最新的关节状态，并将它们发布到 /joint_states 这个 ROS 2 主题上
 
+  # GripperActionController
 x1_controller:
   ros__parameters:
     joints:

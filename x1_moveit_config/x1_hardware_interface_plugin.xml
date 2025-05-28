@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<library path="x1_moveit_config">
+  <class name="x1_hardware_interface/X1SystemInterface"
+         type="x1_hardware_interface::X1SystemInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      ROS 2控制的X1机器人系统接口实现
+    </description>
+  </class>
+</library>
