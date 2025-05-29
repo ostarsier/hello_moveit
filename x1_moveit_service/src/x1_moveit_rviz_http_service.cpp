@@ -126,11 +126,25 @@ public:
         target_pose.orientation.z = qz;
         target_pose.orientation.w = qw;
         
+        // 设置规划时间和尝试次数
+        move_group_interface_->setPlanningTime(10.0); // 设置1秒规划时间
+        move_group_interface_->setNumPlanningAttempts(10); // 设置规划尝试次数
+        
+        // 使用TrajOpt规划器，它是基于优化的规划器，对相同输入更可能产生相同输出
+        move_group_interface_->setPlannerId("trajopt");
+        RCLCPP_INFO(logger_, "使用TrajOpt规划器");
+        
+        // 设置目标姿态
         move_group_interface_->setPoseTarget(target_pose);
-
+        
         // 创建规划
         moveit::planning_interface::MoveGroupInterface::Plan plan;
+        RCLCPP_INFO(logger_, "开始规划...");
+        auto start_time = std::chrono::steady_clock::now();
         bool success = static_cast<bool>(move_group_interface_->plan(plan));
+        auto end_time = std::chrono::steady_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
+        RCLCPP_INFO(logger_, "规划%s，耗时: %ld 毫秒", success ? "成功" : "失败", duration);
 
         // 执行规划
         std::string result;
