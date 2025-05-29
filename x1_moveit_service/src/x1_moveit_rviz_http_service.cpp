@@ -137,6 +137,11 @@ public:
         // 设置目标姿态
         move_group_interface_->setPoseTarget(target_pose);
         
+        // 设置速度缩放因子（范围0.1-1.0），设置为0.3表示速度减慃30%
+        move_group_interface_->setMaxVelocityScalingFactor(0.3);
+        move_group_interface_->setMaxAccelerationScalingFactor(0.3);
+        RCLCPP_INFO(logger_, "已设置速度缩放因子为0.3，加速度缩放因子为0.3");
+        
         // 创建规划
         moveit::planning_interface::MoveGroupInterface::Plan plan;
         RCLCPP_INFO(logger_, "开始规划...");
