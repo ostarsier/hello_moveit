@@ -16,5 +16,6 @@ moveit_simple_controller_manager:
       - right_elbow_pitch_joint     # 右肘俯仰关节
       - right_elbow_yaw_joint       # 右肘偏航关节
       - right_wrist_pitch_joint     # 右腕俯仰关节
+      - right_wrist_roll_joint
     action_ns: follow_joint_trajectory  # 轨迹跟随action命名空间
     default: true  # 是否为默认控制器

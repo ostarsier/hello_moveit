@@ -7,3 +7,4 @@ initial_positions:
   right_shoulder_roll_joint: 0  # 右肩滚转关节初始角度
   right_shoulder_yaw_joint: 0   # 右肩偏航关节初始角度
   right_wrist_pitch_joint: 0    # 右腕俯仰关节初始角度
+  right_wrist_roll_joint: 0     # 右腕滚转关节初始角度

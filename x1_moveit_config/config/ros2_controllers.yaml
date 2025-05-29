@@ -22,6 +22,7 @@ x1_controller:
       - right_elbow_pitch_joint     # 右肘俯仰关节
       - right_elbow_yaw_joint       # 右肘偏航关节
       - right_wrist_pitch_joint     # 右腕俯仰关节
+      - right_wrist_roll_joint
     command_interfaces:
       - position    # 控制接口，使用位置模式
     state_interfaces:

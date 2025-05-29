@@ -558,7 +558,7 @@
     <parent
       link="left_elbow_yaw" />
     <child
-      link="left_wrist_pitch" />
+      link="left_middle_link" />
     <axis
       xyz="-1 0 0" />
     <limit
@@ -568,7 +568,26 @@
       velocity="0" />
   </joint>
   
-  
+  <link name="left_middle_link" />
+
+  <joint
+    name="left_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_middle_link" />
+    <child
+      link="left_wrist_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
 
   <link
     name="right_shoulder_pitch">
@@ -912,7 +931,7 @@
     <parent
       link="right_elbow_yaw" />
     <child
-      link="right_wrist_pitch" />
+      link="right_middle_link" />
     <axis
       xyz="1 0 0" />
     <limit
@@ -922,6 +941,31 @@
       velocity="0" />
   </joint>
   
+  <link name="right_middle_link" />
+
+  <joint
+    name="right_wrist_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_middle_link" />
+    <child
+      link="right_wrist_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+
+
+
+
   <link
     name="waist_motor_a_link">
     <inertial>
