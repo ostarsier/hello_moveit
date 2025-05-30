@@ -4,6 +4,9 @@
 #include <sstream>
 #include <vector>
 #include <thread>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
 
 #include <rclcpp/rclcpp.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
@@ -154,6 +157,10 @@ public:
         // 执行规划
         std::string result;
         if(success) {
+          // 将规划轨迹点保存到日志文件
+          savePlanToLogFile(plan);
+          
+          // 执行规划
           move_group_interface_->execute(plan);
           result = "{\n  \"status\": \"success\",\n  \"message\": \"规划和执行成功\"\n}";
         } else {
@@ -213,6 +220,83 @@ public:
   }
 
 private:
+  // 将规划轨迹点写入日志文件
+  void savePlanToLogFile(const moveit::planning_interface::MoveGroupInterface::Plan& plan) {
+    // 获取当前时间作为文件名的一部分
+    auto now = std::chrono::system_clock::now();
+    auto now_time_t = std::chrono::system_clock::to_time_t(now);
+    std::stringstream filename;
+    filename << "/tmp/moveit_plan_" << std::put_time(std::localtime(&now_time_t), "%Y%m%d_%H%M%S") << ".log";
+    
+    // 打开日志文件
+    std::ofstream logfile(filename.str());
+    if (!logfile.is_open()) {
+      RCLCPP_ERROR(logger_, "无法创建日志文件: %s", filename.str().c_str());
+      return;
+    }
+    
+    RCLCPP_INFO(logger_, "将规划轨迹点保存到文件: %s", filename.str().c_str());
+    
+    // 写入轨迹信息的标题
+    logfile << "# MoveIt规划轨迹点 - " << std::put_time(std::localtime(&now_time_t), "%Y-%m-%d %H:%M:%S") << std::endl;
+    logfile << "# 规划组: " << move_group_interface_->getName() << std::endl;
+    logfile << "# 轨迹点总数: " << plan.trajectory_.joint_trajectory.points.size() << std::endl;
+    logfile << "# 关节名称: ";
+    for (const auto& joint_name : plan.trajectory_.joint_trajectory.joint_names) {
+      logfile << joint_name << " ";
+    }
+    logfile << std::endl << std::endl;
+    
+    // 轨迹头部信息
+    logfile << "# 轨迹头部信息" << std::endl;
+    logfile << "Frame ID: " << plan.trajectory_.joint_trajectory.header.frame_id << std::endl;
+    logfile << "时间戳: " << plan.trajectory_.joint_trajectory.header.stamp.sec << "." 
+            << std::setfill('0') << std::setw(9) << plan.trajectory_.joint_trajectory.header.stamp.nanosec << std::endl;
+    logfile << std::endl;
+    
+    // 写入每个轨迹点的详细信息
+    logfile << "# 轨迹点详细信息" << std::endl;
+    logfile << "# 格式: 点索引, 时间(秒), [位置...], [速度...], [加速度...]" << std::endl;
+    
+    // 遍历所有轨迹点
+    for (size_t i = 0; i < plan.trajectory_.joint_trajectory.points.size(); ++i) {
+      const auto& point = plan.trajectory_.joint_trajectory.points[i];
+      
+      // 写入点索引和时间
+      logfile << i << ", " << point.time_from_start.sec << "." 
+              << std::setfill('0') << std::setw(9) << point.time_from_start.nanosec;
+      
+      // 写入位置
+      logfile << ", [";
+      for (size_t j = 0; j < point.positions.size(); ++j) {
+        logfile << point.positions[j];
+        if (j < point.positions.size() - 1) logfile << ", ";
+      }
+      logfile << "]";
+      
+      // 写入速度
+      logfile << ", [";
+      for (size_t j = 0; j < point.velocities.size(); ++j) {
+        logfile << point.velocities[j];
+        if (j < point.velocities.size() - 1) logfile << ", ";
+      }
+      logfile << "]";
+      
+      // 写入加速度
+      logfile << ", [";
+      for (size_t j = 0; j < point.accelerations.size(); ++j) {
+        logfile << point.accelerations[j];
+        if (j < point.accelerations.size() - 1) logfile << ", ";
+      }
+      logfile << "]";
+      
+      logfile << std::endl;
+    }
+    
+    logfile.close();
+    RCLCPP_INFO(logger_, "成功保存%zu个轨迹点到日志文件", plan.trajectory_.joint_trajectory.points.size());
+  }
+
   std::shared_ptr<rclcpp::Node> node_;
   std::shared_ptr<moveit::planning_interface::MoveGroupInterface> move_group_interface_;
   std::shared_ptr<httplib::Server> server_ptr_;
