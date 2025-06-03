@@ -211,7 +211,8 @@ hardware_interface::return_type X1SystemInterface::write(
                   "Joint %zu command: %f", i, hw_commands_[i]);
     }
     
-    json_stream << "]";
+    // 在数组末尾添加null值
+    json_stream << ",null]";
     std::string json_array = json_stream.str();
     
     // 将数组存储到Redis中
