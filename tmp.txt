@@ -1,0 +1,105 @@
+ros2 launch mojia_moveit_config demo.launch.py
+[INFO] [launch]: All log files can be found below /home/yons/.ros/log/2025-06-05-21-01-42-147429-yons-MS-7E06-1308837
+[INFO] [launch]: Default logging verbosity is set to INFO
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+Using load_yaml() directly is deprecated. Use xacro.load_yaml() instead.
+[INFO] [robot_state_publisher-1]: process started with pid [1308851]
+[INFO] [move_group-2]: process started with pid [1308853]
+[INFO] [rviz2-3]: process started with pid [1308855]
+[INFO] [ros2_control_node-4]: process started with pid [1308857]
+[INFO] [spawner-5]: process started with pid [1308859]
+[INFO] [spawner-6]: process started with pid [1308861]
+[robot_state_publisher-1] [WARN] [1749128502.688805809] [kdl_parser]: The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-1] [INFO] [1749128502.688877690] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-1] [INFO] [1749128502.688901803] [robot_state_publisher]: got segment left_ankle_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688904351] [robot_state_publisher]: got segment left_ankle_roll
+[robot_state_publisher-1] [INFO] [1749128502.688906368] [robot_state_publisher]: got segment left_elbow_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688908150] [robot_state_publisher]: got segment left_elbow_yaw
+[robot_state_publisher-1] [INFO] [1749128502.688910102] [robot_state_publisher]: got segment left_hip_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688911726] [robot_state_publisher]: got segment left_hip_roll
+[robot_state_publisher-1] [INFO] [1749128502.688913437] [robot_state_publisher]: got segment left_hip_yaw
+[robot_state_publisher-1] [INFO] [1749128502.688915160] [robot_state_publisher]: got segment left_knee_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688916931] [robot_state_publisher]: got segment left_shoulder_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688918648] [robot_state_publisher]: got segment left_shoulder_roll
+[robot_state_publisher-1] [INFO] [1749128502.688920343] [robot_state_publisher]: got segment left_shoulder_yaw
+[robot_state_publisher-1] [INFO] [1749128502.688921979] [robot_state_publisher]: got segment lumbar_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688923654] [robot_state_publisher]: got segment lumbar_roll
+[robot_state_publisher-1] [INFO] [1749128502.688925354] [robot_state_publisher]: got segment lumbar_yaw
+[robot_state_publisher-1] [INFO] [1749128502.688927015] [robot_state_publisher]: got segment right_ankle_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688928710] [robot_state_publisher]: got segment right_ankle_roll
+[robot_state_publisher-1] [INFO] [1749128502.688930429] [robot_state_publisher]: got segment right_elbow_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688932100] [robot_state_publisher]: got segment right_elbow_yaw
+[robot_state_publisher-1] [INFO] [1749128502.688933797] [robot_state_publisher]: got segment right_hip_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688935486] [robot_state_publisher]: got segment right_hip_roll
+[robot_state_publisher-1] [INFO] [1749128502.688937166] [robot_state_publisher]: got segment right_hip_yaw
+[robot_state_publisher-1] [INFO] [1749128502.688938901] [robot_state_publisher]: got segment right_knee_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688940746] [robot_state_publisher]: got segment right_shoulder_pitch
+[robot_state_publisher-1] [INFO] [1749128502.688942625] [robot_state_publisher]: got segment right_shoulder_roll
+[robot_state_publisher-1] [INFO] [1749128502.688944388] [robot_state_publisher]: got segment right_shoulder_yaw
+[ros2_control_node-4] [WARN] [1749128502.693804991] [controller_manager]: [Deprecated] Passing the robot description parameter directly to the control_manager node is deprecated. Use '~/robot_description' topic from 'robot_state_publisher' instead.
+[ros2_control_node-4] [INFO] [1749128502.694034071] [resource_manager]: Loading hardware 'FakeSystem' 
+[ros2_control_node-4] [INFO] [1749128502.694353196] [resource_manager]: Initialize hardware 'FakeSystem' 
+[ros2_control_node-4] [INFO] [1749128502.694378959] [resource_manager]: Successful initialization of hardware 'FakeSystem'
+[ros2_control_node-4] [INFO] [1749128502.694413663] [resource_manager]: 'configure' hardware 'FakeSystem' 
+[ros2_control_node-4] [INFO] [1749128502.694416972] [resource_manager]: Successful 'configure' of hardware 'FakeSystem'
+[ros2_control_node-4] [INFO] [1749128502.694420210] [resource_manager]: 'activate' hardware 'FakeSystem' 
+[ros2_control_node-4] [INFO] [1749128502.694422432] [resource_manager]: Successful 'activate' of hardware 'FakeSystem'
+[ros2_control_node-4] [INFO] [1749128502.695713876] [controller_manager]: update rate is 100 Hz
+[ros2_control_node-4] [INFO] [1749128502.695726248] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50
+[ros2_control_node-4] [WARN] [1749128502.695808363] [controller_manager]: No real-time kernel detected on this system. See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.
+[move_group-2] [INFO] [1749128502.708417605] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.00453293 seconds
+[move_group-2] [INFO] [1749128502.708488521] [moveit_robot_model.robot_model]: Loading robot model 'mojia'...
+[move_group-2] [INFO] [1749128502.708501368] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[ros2_control_node-4] [INFO] [1749128502.833459490] [controller_manager]: Loading controller 'mojia_controller'
+[ros2_control_node-4] Exception thrown during init stage with message: Invalid value set during initialization for parameter 'command_interfaces': 'effort' command interface has to be used alone 
+[ros2_control_node-4] [ERROR] [1749128502.839060282] [controller_manager]: Could not initialize the controller named 'mojia_controller'
+[ros2_control_node-4] [INFO] [1749128502.841819027] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[spawner-5] [FATAL] [1749128502.848087803] [spawner_mojia_controller]: Failed loading controller mojia_controller
+[spawner-6] [INFO] [1749128502.855111803] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster
+[ros2_control_node-4] [INFO] [1749128502.855750959] [controller_manager]: Configuring controller 'joint_state_broadcaster'
+[ros2_control_node-4] [INFO] [1749128502.855825450] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[spawner-6] [INFO] [1749128502.886479141] [spawner_joint_state_broadcaster]: Configured and activated joint_state_broadcaster
+[move_group-2] terminate called after throwing an instance of 'rclcpp::exceptions::InvalidParameterTypeException'
+[move_group-2]   what():  parameter 'robot_description_planning.joint_limits.right_shoulder_pitch_joint.max_velocity' has invalid type: expected [double] got [integer]
+[move_group-2] Stack trace (most recent call last):
+[move_group-2] #19   Object "", at 0xffffffffffffffff, in 
+[move_group-2] #18   Object "/home/yons/ws_moveit/install/moveit_ros_move_group/lib/moveit_ros_move_group/move_group", at 0x5c24542b3e74, in _start
+[ERROR] [spawner-5]: process has died [pid 1308859, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner mojia_controller --ros-args'].
+[move_group-2] #17   Source "../csu/libc-start.c", line 392, in __libc_start_main_impl [0x71f774229e3f]
+[move_group-2] #16   Source "../sysdeps/nptl/libc_start_call_main.h", line 58, in __libc_start_call_main [0x71f774229d8f]
+[move_group-2] #15   Object "/home/yons/ws_moveit/install/moveit_ros_move_group/lib/moveit_ros_move_group/move_group", at 0x5c24542b31f7, in main
+[move_group-2] #14   Object "/home/yons/ws_moveit/install/moveit_ros_planning/lib/libmoveit_cpp.so.2.5.9", at 0x71f775034ed0, in moveit_cpp::MoveItCpp::MoveItCpp(std::shared_ptr<rclcpp::Node> const&, moveit_cpp::MoveItCpp::Options const&)
+[move_group-2] #13   Object "/home/yons/ws_moveit/install/moveit_ros_planning/lib/libmoveit_cpp.so.2.5.9", at 0x71f7750349cc, in moveit_cpp::MoveItCpp::loadPlanningSceneMonitor(moveit_cpp::MoveItCpp::PlanningSceneMonitorOptions const&)
+[move_group-2] #12   Object "/home/yons/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_scene_monitor.so.2.5.9", at 0x71f774d784d1, in planning_scene_monitor::PlanningSceneMonitor::PlanningSceneMonitor(std::shared_ptr<rclcpp::Node> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+[move_group-2] #11   Object "/home/yons/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_scene_monitor.so.2.5.9", at 0x71f774d7842a, in planning_scene_monitor::PlanningSceneMonitor::PlanningSceneMonitor(std::shared_ptr<rclcpp::Node> const&, std::shared_ptr<planning_scene::PlanningScene> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+[move_group-2] #10   Object "/home/yons/ws_moveit/install/moveit_ros_planning/lib/libmoveit_robot_model_loader.so.2.5.9", at 0x71f7748916a1, in robot_model_loader::RobotModelLoader::RobotModelLoader(std::shared_ptr<rclcpp::Node> const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool)
+[move_group-2] #9    Object "/home/yons/ws_moveit/install/moveit_ros_planning/lib/libmoveit_robot_model_loader.so.2.5.9", at 0x71f77488ff8c, in robot_model_loader::RobotModelLoader::configure(robot_model_loader::RobotModelLoader::Options const&)
+[move_group-2] #8    Object "/home/yons/ws_moveit/install/moveit_ros_planning/lib/libmoveit_planning_scene_monitor.so.2.5.9", at 0x71f774dabf0b, in bool rclcpp::Node::get_parameter<double>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double&) const
+[move_group-2] #7    Object "/home/yons/ws_moveit/install/moveit_ros_move_group/lib/moveit_ros_move_group/move_group", at 0x5c24542bc20f, in decltype(auto) rclcpp::Parameter::get_value<double>() const
+[move_group-2] #6    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32", at 0x71f7746b7067, in __cxa_throw
+[move_group-2] #5    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32", at 0x71f7746b6e06, in std::terminate()
+[move_group-2] #4    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32", at 0x71f7746b6d9b, in 
+[move_group-2] #3    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32", at 0x71f7746a4f25, in 
+[move_group-2] #2    Source "./stdlib/abort.c", line 79, in abort [0x71f7742287f2]
+[move_group-2] #1    Source "../sysdeps/posix/raise.c", line 26, in raise [0x71f774242475]
+[move_group-2] #0  | Source "./nptl/pthread_kill.c", line 89, in __pthread_kill_internal
+[move_group-2]     | Source "./nptl/pthread_kill.c", line 78, in __pthread_kill_implementation
+[move_group-2]       Source "./nptl/pthread_kill.c", line 44, in __pthread_kill [0x71f7742969fc]
+[move_group-2] Aborted (Signal sent by tkill() 1308853 1000)
+[INFO] [spawner-6]: process has finished cleanly [pid 1308861]
+[ERROR] [move_group-2]: process has died [pid 1308853, exit code -6, cmd '/home/yons/ws_moveit/install/moveit_ros_move_group/lib/moveit_ros_move_group/move_group --ros-args --params-file /tmp/launch_params_6h6gyvtn --params-file /tmp/launch_params_na6tn9ug'].
+[rviz2-3] [INFO] [1749128503.082560998] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1749128503.082614382] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-3] [INFO] [1749128503.093647449] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-3]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp

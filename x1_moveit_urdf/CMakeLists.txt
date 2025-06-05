@@ -24,7 +24,7 @@ if(BUILD_TESTING)
 endif()
 
 # 安装URDF和meshes文件到share目录
-install(DIRECTORY urdf meshes
+install(DIRECTORY urdf meshes meshes2
   DESTINATION share/${PROJECT_NAME}
 )
 
