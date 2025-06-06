@@ -52,14 +52,14 @@ int main(int argc, char **argv)
 
   // 设置末端执行器的目标位姿
   geometry_msgs::msg::Pose target_pose;
-  target_pose.position.x = 0.002;
-  target_pose.position.y = -0.199;
-  target_pose.position.z = -0.006;
+  target_pose.position.x = -0.016063;
+  target_pose.position.y = -0.25475;
+  target_pose.position.z = 0.17403;
   // 给定的四元数 (0.5, 0.5, 0.5, 0.5) 对应的 RPY 约为 (1.047, 1.047, 1.047) rad 或 (60, 60, 60) 度
-  target_pose.orientation.x = 0.500;
-  target_pose.orientation.y = 0.500;
-  target_pose.orientation.z = 0.500;
-  target_pose.orientation.w = 0.500;
+  target_pose.orientation.x = 0.0052177;
+  target_pose.orientation.y = 0.009862;
+  target_pose.orientation.z = 0.46937;
+  target_pose.orientation.w = 0.88293;
 
   RCLCPP_INFO(LOGGER, "Attempting to solve IK for target pose:");
   RCLCPP_INFO(LOGGER, "  Position: x=%f, y=%f, z=%f", target_pose.position.x, target_pose.position.y, target_pose.position.z);
