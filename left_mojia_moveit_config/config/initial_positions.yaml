@@ -1,0 +1,8 @@
+# Default initial positions for mojia's ros2_control fake system
+
+initial_positions:
+  left_elbow_pitch_joint: 0
+  left_elbow_yaw_joint: 0
+  left_shoulder_pitch_joint: 0
+  left_shoulder_roll_joint: 0
+  left_shoulder_yaw_joint: 0

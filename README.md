@@ -90,7 +90,7 @@ set joint_position [0,-0.7,null,null,null,null,null,null]
 # 轨迹规划
 
 
-- 初始位置
+- 右手初始位置
 ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=-0.016089 -p y:=-0.25476 -p z:=0.17403 -p qx:=0.0077009 -p qy:=0.0081029 -p qz:=0.69094 -p qw:=0.72283
 
 - 伸过去拿话筒的位置
@@ -99,6 +99,14 @@ ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=0.31817 -p y:=-0.2514
 - 演讲时话筒的位置
 ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=0.18405 -p y:=-0.14813 -p z:=0.38716 -p qx:=0.13169 -p qy:=0.70137 -p qz:=-0.70001 -p qw:=0.027015
 
+
+
+
+- 左手伸出去
+ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=0.16366 -p y:=0.39625 -p z:=0.26149 -p qx:=0.35486 -p qy:=-0.06307 -p qz:=-0.60704 -p qw:=0.70824
+
+- 左手放胸口
+ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=0.086374 -p y:=0.32138 -p z:=0.30793 -p qx:=-0.17755 -p qy:=0.48585 -p qz:=0.83628 -p qw:=-0.18183
 
 # 播放轨迹
 python /home/yons/ws_moveit_my/src/mojia/playback.py go

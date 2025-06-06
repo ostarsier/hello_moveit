@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mojia">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import mojia urdf file -->
+    <xacro:include filename="$(find x1_moveit_urdf)/urdf/mojia.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="mojia.ros2_control.xacro" />
+
+
+    <xacro:mojia_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>
