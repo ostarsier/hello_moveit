@@ -112,3 +112,22 @@ ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=0.086374 -p y:=0.3213
 python /home/yons/ws_moveit_my/src/mojia/playback.py go
 python /home/yons/ws_moveit_my/src/mojia/playback.py say
 
+
+# 抓东西
+- 运行rviz
+ros2 launch x1_moveit_config demo.launch.py
+
+- 运行http服务
+ros2 run x1_moveit_service x1_moveit_rviz_http_service
+
+
+- x1默认位置: right_shoulder_roll_joint: -0.3
+目标位置: x=-0.073, y=-0.199, z=0.005
+目标姿态(欧拉角): roll=3.141, pitch=1.271, yaw=-1.571
+目标姿态(四元数): x=0.569, y=0.569, z=0.420, w=0.420
+
+
+
+
+
+

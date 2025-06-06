@@ -15,7 +15,14 @@ vla_joint_list = [
     "right_elbow_yaw_joint",
     "right_wrist_pitch_joint",
     "right_wrist_roll_joint",
-    "right_claw_joint"
+    
+    "left_shoulder_pitch_joint",
+    "left_shoulder_roll_joint",
+    "left_shoulder_yaw_joint",
+    "left_elbow_pitch_joint",
+    "left_elbow_yaw_joint",
+    "left_wrist_pitch_joint",
+    "left_wrist_roll_joint",
 ]
 
 def read_trajectory_file(file_path):

@@ -40,13 +40,15 @@ int main(int argc, char * argv[])
     "right_shoulder_roll_joint",
     "right_elbow_pitch_joint",
     "right_elbow_yaw_joint",
-    "right_wrist_pitch_joint"
+    "right_wrist_pitch_joint",
+    "right_wrist_roll_joint"
   };
 
   std::vector<double> joint_positions = {
      0,
      0,
      0,
+     -0.3,
      0,
      0,
      0
@@ -55,7 +57,7 @@ int main(int argc, char * argv[])
   robot_state->setJointGroupPositions("manipulator", joint_positions);
 
   // 通过正运动学计算末端执行器位置
-  const Eigen::Isometry3d& end_effector_state = robot_state->getGlobalLinkTransform("right_wrist_pitch");
+  const Eigen::Isometry3d& end_effector_state = robot_state->getGlobalLinkTransform("right_middle_link");
 
   // 转换为geometry_msgs::msg::Pose
   geometry_msgs::msg::Pose target_pose;
