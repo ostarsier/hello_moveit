@@ -922,6 +922,9 @@
       </geometry>
     </collision> -->
   </link>
+
+  <!-- Added OmniPicker_right link and joint -->
+
   <joint
     name="right_wrist_pitch_joint"
     type="revolute">
@@ -962,7 +965,28 @@
       velocity="0" />
   </joint>
 
-
+  <link name="OmniPicker_right">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.1 0.1 0.1" /> 
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.1 0.1 0.1" /> 
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_OmniPicker_right_attachment" type="fixed">
+    <parent link="right_wrist_pitch" />
+    <child link="OmniPicker_right" />
+    <origin xyz="0 0 0" rpy="0 0 0" /> <!-- 示例: 沿right_wrist_pitch的Z轴0.05米。请根据需要调整。 -->
+  </joint>
 
 
 
