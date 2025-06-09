@@ -78,6 +78,7 @@ ros2 run x1_moveit_service x1_moveit_rviz --ros-args -p x:=-0.016063 -p y:=-0.25
 
 ros2 run x1_moveit_service x1_moveit_rviz_http_service
 curl http://localhost:8080/status
+- 初始位置
 curl -X GET "http://localhost:8080/move?x=0.002&y=-0.199&z=-0.006&qx=0.5&qy=0.5&qz=0.5&qw=0.5"
 
 curl -X GET "http://localhost:8080/move?x=0.3116&y=-0.05&z=0.40&qx=0.5&qy=0.5&qz=0.5&qw=0.5"
