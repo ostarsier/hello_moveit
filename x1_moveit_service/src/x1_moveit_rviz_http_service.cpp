@@ -129,37 +129,34 @@ public:
         target_pose.orientation.z = qz;
         target_pose.orientation.w = qw;
         
-        // 为 computeCartesianPath 设置参数
-        // 'target_pose' 已在前面从 x,y,z,qx,qy,qz,qw 参数填充
-        std::vector<geometry_msgs::msg::Pose> waypoints;
-        waypoints.push_back(target_pose);
+        // 设置规划时间和尝试次数
+        move_group_interface_->setPlanningTime(10.0); // 设置1秒规划时间
+        move_group_interface_->setNumPlanningAttempts(10); // 设置规划尝试次数
+        
+        // 使用TrajOpt规划器，它是基于优化的规划器，对相同输入更可能产生相同输出
+        move_group_interface_->setPlannerId("trajopt");
+        RCLCPP_INFO(logger_, "使用TrajOpt规划器");
+        
+        // 设置目标姿态
+        move_group_interface_->setPoseTarget(target_pose);
+        
+        // 设置速度缩放因子（范围0.1-1.0），设置为0.3表示速度减慃30%
+        move_group_interface_->setMaxVelocityScalingFactor(0.3);
+        move_group_interface_->setMaxAccelerationScalingFactor(0.3);
 
-        const double eef_step = 0.01; // 笛卡尔空间步长 (米)
-        const double jump_threshold = 0.0; // 关节空间跳跃阈值 (0 表示禁用)
-        bool avoid_collisions = true; // 进行碰撞检测
-
-        // 设置速度和加速度缩放因子（如果需要应用于笛卡尔路径）
-        // 注意: setMaxVelocityScalingFactor/setMaxAccelerationScalingFactor 通常影响 plan()。
-        // 对于 computeCartesianPath 生成的轨迹，如果需要调整速度，
-        // 通常在后处理轨迹时（例如使用 TimeParameterization）进行，
-        // 或者确保IK求解器和机器人模型配置了合适的速度/加速度限制。
-        // 为了简单起见，这里我们不直接为computeCartesianPath设置这些，
-        // 但如果需要，可以在生成轨迹后重新计时。
-        // move_group_interface_->setMaxVelocityScalingFactor(0.3);
-        // move_group_interface_->setMaxAccelerationScalingFactor(0.3);
-        // RCLCPP_INFO(logger_, "已设置速度缩放因子为0.3，加速度缩放因子为0.3 for Cartesian path (if applicable)");
-
-        moveit::planning_interface::MoveGroupInterface::Plan plan; // 使用 'plan' 以匹配后续 savePlanToLogFile 调用
-        RCLCPP_INFO(logger_, "开始计算笛卡尔路径...");
+        RCLCPP_INFO(logger_, "已设置速度缩放因子为0.3，加速度缩放因子为0.3");
+        
+        // 创建规划
+        moveit::planning_interface::MoveGroupInterface::Plan plan;
+        RCLCPP_INFO(logger_, "开始规划...");
         auto start_time = std::chrono::steady_clock::now();
-        double fraction = move_group_interface_->computeCartesianPath(waypoints, eef_step, jump_threshold, plan.trajectory_, avoid_collisions);
+        bool success = static_cast<bool>(move_group_interface_->plan(plan));
         auto end_time = std::chrono::steady_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
+        RCLCPP_INFO(logger_, "规划%s，耗时: %ld 毫秒", success ? "成功" : "失败", duration);
 
-        bool success = (fraction >= 0.99); // 认为完成99%以上即成功
-        RCLCPP_INFO(logger_, "笛卡尔路径计算%s (%.2f%% 完成)，耗时: %ld 毫秒", success ? "成功" : "失败", fraction * 100.0, duration);
-
-        std::string result; // 用于构建HTTP响应
+        // 执行规划
+        std::string result;
         if(success) {
           // 将规划轨迹点保存到日志文件
           savePlanToLogFile(plan);

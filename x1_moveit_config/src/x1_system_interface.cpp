@@ -211,14 +211,18 @@ hardware_interface::return_type X1SystemInterface::write(
                   "Joint %zu command: %f", i, hw_commands_[i]);
     }
     
-    // 在数组末尾添加null值
+    // 在数组末尾添加null值(爪子)
     json_stream << ",null]";
     std::string json_array = json_stream.str();
+    
+    // 打印发送到 Redis 的 JSON 数组
+    RCLCPP_INFO(rclcpp::get_logger("X1SystemInterface"), "Sending to Redis: %s", json_array.c_str());
     
     // 将数组存储到Redis中
     redisReply *reply = (redisReply *)redisCommand(redis_context_, "SET %s %s", 
                                                  joint_position_key_.c_str(), 
                                                  json_array.c_str());
+                                            
     
     if (reply == nullptr) {
       RCLCPP_ERROR(rclcpp::get_logger("X1SystemInterface"),
