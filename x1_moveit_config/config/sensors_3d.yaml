@@ -1,26 +1,26 @@
 # 3D传感器配置文件，定义用于环境感知的传感器及其参数
 sensors:
-  - kinect_pointcloud   # 点云传感器
-  - kinect_depthimage   # 深度图像传感器
+  - realsense_pointcloud   # 点云传感器
+  - realsense_depthimage   # 深度图像传感器
 
-kinect_pointcloud:
+realsense_pointcloud:
   filtered_cloud_topic: filtered_cloud   # 过滤后点云话题名
-  max_range: 5.0                        # 最大感知距离（米）
+  max_range: 1.0                        # 最大感知距离（米）
   max_update_rate: 1.0                  # 最大更新频率（Hz）
-  padding_offset: 0.1                   # 体素膨胀偏移量
+  padding_offset: 0.01                   # 体素膨胀偏移量
   padding_scale: 1.0                    # 体素膨胀缩放因子
-  point_cloud_topic: /head_mount_kinect/depth_registered/points  # 原始点云话题
+  point_cloud_topic: /camera/camera/depth/color/points  # 原始点云话题
   point_subsample: 1                    # 点云下采样因子
   sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater # 使用的插件
 
-kinect_depthimage:
-  far_clipping_plane_distance: 5.0      # 远裁剪面距离（米）
+realsense_depthimage:
+  far_clipping_plane_distance: 1.0      # 远裁剪面距离（米）
   filtered_cloud_topic: filtered_cloud  # 过滤后点云话题名
-  image_topic: /head_mount_kinect/depth_registered/image_raw  # 深度图像话题
+  image_topic: /camera/camera/depth/image_rect_raw  # 深度图像话题
   max_update_rate: 1.0                  # 最大更新频率（Hz）
   near_clipping_plane_distance: 0.3     # 近平面裁剪距离（米）
   padding_offset: 0.03                  # 体素膨胀偏移量
-  padding_scale: 4.0                    # 体素膨胀缩放因子
+  padding_scale: 1                   # 体素膨胀缩放因子
   queue_size: 5                         # 消息队列长度
   sensor_plugin: occupancy_map_monitor/DepthImageOctomapUpdater # 使用的插件
   shadow_threshold: 0.2                 # 阴影阈值

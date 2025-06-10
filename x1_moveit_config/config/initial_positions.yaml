@@ -4,11 +4,7 @@ initial_positions:
   right_elbow_pitch_joint: 0   # 右手肘俯仰关节初始角度（单位：弧度）
   right_elbow_yaw_joint: 0     # 右手肘偏航关节初始角度
   right_shoulder_pitch_joint: 0 # 右肩俯仰关节初始角度
-  right_shoulder_roll_joint: -0.3  # 右肩滚转关节初始角度
+  right_shoulder_roll_joint: -0.5  # 右肩滚转关节初始角度
   right_shoulder_yaw_joint: 0   # 右肩偏航关节初始角度
   right_wrist_pitch_joint: 0    # 右腕俯仰关节初始角度
   right_wrist_roll_joint: 0     # 右腕滚转关节初始角度
-
-
-
-  

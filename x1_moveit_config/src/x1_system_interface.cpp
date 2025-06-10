@@ -216,7 +216,7 @@ hardware_interface::return_type X1SystemInterface::write(
     std::string json_array = json_stream.str();
     
     // 打印发送到 Redis 的 JSON 数组
-    RCLCPP_INFO(rclcpp::get_logger("X1SystemInterface"), "Sending to Redis: %s", json_array.c_str());
+    // RCLCPP_INFO(rclcpp::get_logger("X1SystemInterface"), "Sending to Redis: %s", json_array.c_str());
     
     // 将数组存储到Redis中
     redisReply *reply = (redisReply *)redisCommand(redis_context_, "SET %s %s", 
